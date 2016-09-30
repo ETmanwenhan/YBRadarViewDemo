@@ -26,6 +26,7 @@
     
     CGRect radarRect = CGRectMake(0, 80, kDeviceWidth, kDeviceWidth);
     YBRadarView *radarView=[[YBRadarView alloc] initWithFrame:radarRect avatar:@"1024.png"];
+    radarView.style = YBRadarViewStyleLine;
     [self.view addSubview:radarView];
     
     

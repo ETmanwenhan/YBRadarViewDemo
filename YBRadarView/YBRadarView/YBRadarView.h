@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    YBRadarViewStyleDefault,
+    YBRadarViewStyleLine,
+} YBRadarViewStyle;
+
 @interface YBRadarView : UIView
+
+@property (nonatomic, assign) YBRadarViewStyle style;
 
 
 -(instancetype)initWithFrame:(CGRect)frame avatar:(NSString *)avatar;

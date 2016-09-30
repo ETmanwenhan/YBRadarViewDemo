@@ -22,6 +22,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
         
+        _style = YBRadarViewStyleDefault;
         self.avatarImage = [UIImage imageNamed:avatar];
         
         //监听当从后台进入前台，防止假死状态
@@ -53,6 +54,10 @@
         pulsingLayer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
         pulsingLayer.cornerRadius = rect.size.height/2;
         pulsingLayer.borderWidth = 3.0;
+        
+        if (_style == YBRadarViewStyleDefault) {
+            pulsingLayer.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
+        }
         
         CAMediaTimingFunction * defaultCurve =
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
